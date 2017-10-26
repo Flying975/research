@@ -160,6 +160,8 @@ if __name__ == "__main__":
 
     # start from checkpoint
     if args.loadweights:
+      print('loading weight')
+      sess.run(tf.global_variables_initializer())
       loader()
 
     train_model(args.name, g_train, d_train, sampler,
